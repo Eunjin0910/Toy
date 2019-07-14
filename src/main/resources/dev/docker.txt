@@ -1,0 +1,5 @@
+﻿포트 포워딩
+    포트 23307
+
+mariaDB 컨테이너 생성
+    docker run -d --name board-mariadb -p 23307:3306 -e "MYSQL_ROOT_PASSWORD=boardmaria" -e "MYSQL_DATABASE=board" mariadb:10 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci

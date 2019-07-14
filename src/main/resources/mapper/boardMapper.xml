@@ -9,31 +9,78 @@
         <result column="REGDATE" property="regdate"/>
     </resultMap>
 
+    <!--게시판 목록 총 숫자-->
+    <select id="selectBoardListCount" parameterType="com.example.board.model.Page" resultType="int">
+        SELECT
+            count(boardid) as totcount
+        FROM
+            board
+        WHERE 1 = 1
+        <if test="searchText != null">
+        AND
+            title like CONCAT('%',#{searchText},'%')
+        </if>
+    </select>
+
+    <!--게시판 목록 조회-->
     <select id="selectBoardList" parameterType="com.example.board.model.Page" resultMap="boardResultMap">
         SELECT
-            (totcount - rownum) + 1 AS NO,
+           ROW_NUMBER() OVER (ORDER BY regdate desc, boardid DESC) AS no,
+           boardid,
+           title,
+           content,
+           regdate
+        FROM
+           board
+        WHERE 1 = 1
+        <if test="searchText != null">
+        AND
+           title like CONCAT('%',#{searchText},'%')
+        </if>
+        <choose>
+            <when test="pageNum gte 2 and pageNum != null">
+                LIMIT #{queryPageNum}, #{pageLength}
+            </when>
+            <otherwise>
+                LIMIT 0, #{pageLength}
+            </otherwise>
+        </choose>
+    </select>
+
+    <!--게시판 글 조회-->
+    <select id="selectBoard" parameterType="com.example.board.model.Board" resultMap="boardResultMap">
+        SELECT
             boardid,
             title,
             content,
             regdate
         FROM
-            (SELECT
-                ROW_NUMBER() OVER (ORDER BY regdate asc) AS rownum,
-               boardid,
-               title,
-               content,
-               regdate,
-               (SELECT COUNT(boardid) FROM board ) AS totcount
-            FROM
-               board) AS T1
-        WHERE 1 = 1
-        <choose>
-            <when test="pageNum >= 2 and pageNum != null">
-                LIMIT 10 * (#{pageNum} - 1) , #{pageLength}
-            </when>
-            <otherwise>
-                LIMIT 0, 10
-            </otherwise>
-        </choose>
+            board
+        WHERE
+            boardid = #{boardid}
     </select>
+
+    <!--게시판 글 등록-->
+    <insert id="insertBoard" parameterType="com.example.board.model.Board">
+        INSERT INTO board
+        (BOARDID    ,TITLE      ,CONTENT    ,REGDATE)
+        VALUES
+        (NULL       ,#{title}   ,#{content} ,NOW())
+    </insert>
+
+    <!--게시판 글 수정-->
+    <update id="updateBoard" parameterType="com.example.board.model.Board">
+        UPDATE board
+        SET
+            title = #{title},
+            content = #{content}
+        WHERE
+            boardid = #{boardid}
+    </update>
+
+    <!--게시판 글 삭제-->
+    <delete id="deleteBoard" parameterType="com.example.board.model.Board">
+        DELETE FROM board
+        WHERE boardid = #{boardid}
+    </delete>
 </mapper>

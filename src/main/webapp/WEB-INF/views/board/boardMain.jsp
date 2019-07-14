@@ -1,38 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <jsp:include page="../templates/header.jsp" />
-<section style="background-color: antiquewhite">
-    <h1>∞‘Ω√∆«</h1>
-    <p>∞‘Ω√∆« øπ¡¶</p>
+<script type="text/javascript" src="/js/board/board.js" charset="UTF-8"></script>
+<section class="container">
+    <h1>Í≤åÏãúÌåê</h1>
+    <hr/>
     <article>
-        <input type="text" placeholder="¡¶∏Ò ∞ÀªˆæÓ∏¶ ¿‘∑¬«ÿ¡÷ººø‰." style="width: 70%;">
-        <input type="button" style="width: 20%" value="∞Àªˆ">
+        <div class="pull-right" style="margin-bottom: 10px;">
+            <form class="form-inline" id="searchFrom" action="/">
+                <input type="hidden" name="pageNum" value="0">
+                <input class="form-control" type="text" name="searchText" placeholder="Ï†úÎ™©ÏùÑ ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî." value="${page.searchText}">
+                <button class="btn btn-default" type="submit">Í≤ÄÏÉâ</button>
+            </form>
+        </div>
     </article>
-    <table>
-        <colgroup>
-            <col width="8%">
-            <col width="32%">
-            <col width="40%">
-            <col width="20%">
-        </colgroup>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>¡¶∏Ò</th>
-                <th>≥ªøÎ</th>
-                <th>µÓ∑œ¿œ¿⁄</th>
-            </tr>
-        </thead>
-        <tbody>
-            <c:forEach var="board" items="${boardList}">
+    <div>
+        <table class="table table-striped table-bordered">
+            <colgroup>
+                <col width="5%">
+                <col width="25%">
+                <col width="60%">
+                <col width="10%">
+            </colgroup>
+            <thead>
                 <tr>
-                    <td>${board.no}</td>
-                    <td>${board.title}</td>
-                    <td>${board.content}</td>
-                    <td>${board.regdate}</td>
+                    <th>No</th>
+                    <th>Ï†úÎ™©</th>
+                    <th>ÎÇ¥Ïö©</th>
+                    <th>Îì±Î°ùÏùºÏûê</th>
                 </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <c:forEach var="board" items="${boardList}">
+                    <tr>
+                        <td>${page.totCount - board.no + 1}</td>
+                        <td>${fn:escapeXml(board.title)}</td>
+                        <td><a href="/board/boardDetail/${board.boardid}">${fn:escapeXml(board.content)}</a></td>
+                        <td><fmt:formatDate value="${board.regdate}" pattern="yyyy-MM-dd"/></td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+        <a class="btn btn-default pull-right" href="/board/write/0">Í∏ÄÏì∞Í∏∞</a>
+    </div>
+    <jsp:include page="../common/pageNavi.jsp" />
 </section>
 <jsp:include page="../templates/footer.jsp" />
