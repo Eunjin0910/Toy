@@ -6,10 +6,10 @@
 <section class="container">
     <c:choose>
         <c:when test="${board.boardid != null && board.boardid != 0}">
-            <h1>게시판 글 등록</h1>
+            <h1>게시판 글 수정</h1>
         </c:when>
         <c:otherwise>
-            <h1>게시판 글 수정</h1>
+            <h1>게시판 글 등록</h1>
         </c:otherwise>
     </c:choose>
     <hr style="margin-bottom: 30px;"/>
