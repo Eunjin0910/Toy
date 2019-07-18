@@ -5,7 +5,7 @@
 <jsp:include page="../templates/header.jsp" />
 <script type="text/javascript" src="/js/board/board.js" charset="UTF-8"></script>
 <section class="container">
-    <h1>게시판 상세</h1>
+    <h1>게시판 글 상세</h1>
     <hr style="margin-bottom: 30px;"/>
     <div>
         <form class="form-horizontal" id="writeFrom">

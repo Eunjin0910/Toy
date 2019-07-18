@@ -18,7 +18,7 @@ public class BoardController {
     private BoardServiceInterface boardServiceInterface;
 
     //게시판 목록 조회
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/board/list")
     public String selectBoardList(Model model, Page page) throws Exception{
         System.out.println("Controller Name : selectBoardList");
 

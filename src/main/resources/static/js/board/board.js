@@ -17,7 +17,7 @@
             success: function (result) {
                 if(result > 0){
                     alert("게시글을 등록하였습니다.");
-                    location.href = "/";
+                    location.href = "/board/list";
                 }else{
                     alert("게시글 등록에 실패하였습니다.");
                     return false;
@@ -50,7 +50,7 @@ function boardEidtAjax(){
             success: function (result) {
                 if(result > 0){
                     alert("게시글을 수정하였습니다.");
-                    location.href = "/";
+                    location.href = "/board/list";
                 }else{
                     alert("게시글 수정에 실패하였습니다.");
                     return false;
@@ -75,7 +75,7 @@ function boardDeleteAjax(boardid){
             success: function (result) {
                 if(result > 0){
                     alert("게시글을 삭제하였습니다.");
-                    location.href = "/";
+                    location.href = "/board/list";
                 }else{
                     alert("게시글 삭제에 실패하였습니다.");
                     return false;
@@ -87,15 +87,6 @@ function boardDeleteAjax(boardid){
             }
         });
     }else{
-        return false;
-    }
-}
-
-
-function dataCheck(data){
-    if(data == '' || data == 'undefine' || data == null){
-        return true;
-    }else {
         return false;
     }
 }

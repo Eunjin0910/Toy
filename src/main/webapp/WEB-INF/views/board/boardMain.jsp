@@ -5,11 +5,11 @@
 <jsp:include page="../templates/header.jsp" />
 <script type="text/javascript" src="/js/board/board.js" charset="UTF-8"></script>
 <section class="container">
-    <h1>게시판</h1>
+    <h1>게시판 글 목록</h1>
     <hr/>
     <article>
         <div class="pull-right" style="margin-bottom: 10px;">
-            <form class="form-inline" id="searchFrom" action="/">
+            <form class="form-inline" id="searchFrom" action="/board/list">
                 <input type="hidden" name="pageNum" value="0">
                 <input class="form-control" type="text" name="searchText" placeholder="제목을 입력해주세요." value="${page.searchText}">
                 <button class="btn btn-default" type="submit">검색</button>
