@@ -1,8 +1,10 @@
 
-#Drop
+-- Drop
+
 DROP TABLE IF EXISTS `board`;
 
-#Create
+-- Create
+
 CREATE TABLE `board` (
                          `BOARDID` INT(11) NOT NULL AUTO_INCREMENT,
                          `TITLE` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_unicode_ci',
