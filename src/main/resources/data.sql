@@ -1,5 +1,5 @@
 
-#Board
+-- Board
 INSERT INTO board (BOARDID, TITLE, CONTENT, REGDATE) VALUES (NULL, '게시판 글 번호1', '한글테스트', NOW());
 INSERT INTO board (BOARDID, TITLE, CONTENT, REGDATE) VALUES (NULL, '게시판 글 번호2', '한글테스트', NOW());
 INSERT INTO board (BOARDID, TITLE, CONTENT, REGDATE) VALUES (NULL, '게시판 글 번호3', '한글테스트', NOW());
