@@ -24,7 +24,8 @@ public class BoardService implements BoardServiceInterface {
     public List<Board> selectBoardList(Page page){
         return boardMapper.selectBoardList(page);
     }
-    //게시팔 글 조회
+    //게시판 글 조회
+    @Override
     public Board selectBoard(Board board) {return boardMapper.selectBoard(board);}
     //게시판 글 등록
     @Override
