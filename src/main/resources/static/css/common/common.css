@@ -1,0 +1,10 @@
+section.container {
+    min-height: 700px;
+}
+
+
+.page-footer .container-fluid .footer-content {
+    background-color: #101010;
+    color: #9d9d9d;
+    padding: 10px 15px 10px 15px;
+}

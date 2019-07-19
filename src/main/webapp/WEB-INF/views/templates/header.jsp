@@ -3,6 +3,8 @@
 <html lang="ko">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>게시판</title>
 
         <%--Jquery--%>
@@ -12,8 +14,9 @@
                 crossorigin="anonymous"></script>
         <%--Bootstrap--%>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-        <%--common script--%>
+        <%--common--%>
         <script type="text/javascript" src="/js/common/common.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/common/common.css" />
     </head>
     <body>
         <nav class="navbar navbar-inverse navbar-static-top">
