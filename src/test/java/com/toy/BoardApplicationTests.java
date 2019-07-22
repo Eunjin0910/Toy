@@ -1,4 +1,4 @@
-package com.example.board;
+package com.toy;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

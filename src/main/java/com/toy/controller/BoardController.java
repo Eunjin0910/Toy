@@ -1,9 +1,9 @@
-package com.example.board.controller;
+package com.toy.controller;
 
 
-import com.example.board.inter.BoardServiceInterface;
-import com.example.board.model.Board;
-import com.example.board.model.Page;
+import com.toy.inter.BoardServiceInterface;
+import com.toy.model.Board;
+import com.toy.model.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

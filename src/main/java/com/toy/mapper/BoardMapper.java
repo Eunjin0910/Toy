@@ -1,11 +1,15 @@
-package com.example.board.inter;
+package com.toy.mapper;
 
-import com.example.board.model.Board;
-import com.example.board.model.Page;
+import com.toy.model.Board;
+import com.toy.model.Page;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-public interface BoardServiceInterface {
+@Mapper
+@Repository
+public interface BoardMapper {
     //게시판 목록 총 숫자
     int selectBoardListCount(Page page);
     //게시판 목록 조회

@@ -1,9 +1,9 @@
-package com.example.board.service;
+package com.toy.service;
 
-import com.example.board.inter.BoardServiceInterface;
-import com.example.board.mapper.BoardMapper;
-import com.example.board.model.Board;
-import com.example.board.model.Page;
+import com.toy.inter.BoardServiceInterface;
+import com.toy.mapper.BoardMapper;
+import com.toy.model.Board;
+import com.toy.model.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

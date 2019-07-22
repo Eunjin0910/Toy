@@ -1,4 +1,4 @@
-package com.example.board.config;
+package com.toy.config;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages="com.example.board.mapper")
+@MapperScan(basePackages="com.toy.mapper")
 @EnableTransactionManagement
 public class DataBaseConfig {
 
