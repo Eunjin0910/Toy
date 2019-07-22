@@ -3,3 +3,4 @@
 
 mariaDB 컨테이너 생성
     docker run -d --name toy-mariadb -p 23307:3306 -e "MYSQL_ROOT_PASSWORD=toymariadb" -e "MYSQL_DATABASE=toy" mariadb:10 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
