@@ -25,17 +25,10 @@
         <link rel="stylesheet" type="text/css" href="/css/common/common.css" />
     </head>
     <body style="min-height: 700px;">
-        <div class="signin-form align-middle" style="margin: 0 auto; width: 400px; padding-top: 150px;">
-            <form action="/examples/actions/confirmation.php" method="post">
+        <div class="signin-form" style="margin: 0 auto; width: 400px; padding-top: 150px;">
+            <form class="text-center" action="/examples/actions/confirmation.php" method="post" style="border: 1px solid #a1a1a8; border-radius: 20px; padding: 20px;">
                 <h2>Sign in</h2>
-                <p class="hint-text">Sign in with your social media account</p>
-                <div class="social-btn text-center">
-                    <a href="#" class="btn btn-primary btn-lg" title="Facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="btn btn-info btn-lg" title="Twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="btn btn-danger btn-lg" title="Google"><i class="fa fa-google"></i></a>
-                </div>
-                <div class="or-seperator"><b>or</b></div>
-                <div class="form-group">
+                <div class="form-group" style="margin-top: 30px;">
                     <input type="text" class="form-control input-lg" name="username" placeholder="Username" required="required">
                 </div>
                 <div class="form-group">
@@ -44,9 +37,17 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-lg btn-block signup-btn">Sign in</button>
                 </div>
-                <div class="text-center small"><a href="#">Forgot Your password?</a></div>
+
+                <%--비밀번호 찾기--%>
+                <%--<div class="text-center small"><a href="#">Forgot Your password?</a></div>--%>
+
+                <div class="social-btn text-center">
+                    <%--<a href="#" class="btn btn-primary btn-lg" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="btn btn-info btn-lg" title="Twitter"><i class="fa fa-twitter"></i></a>--%>
+                    <a href="#"><img src="https://img.icons8.com/color/96/000000/google-logo.png" style="width: 44px; border: 1px solid #616161; border-radius: 22px; padding: 4px;"></a>
+                </div>
             </form>
-            <div class="text-center small">Don't have an account? <a href="#">Sign up</a></div>
+            <div class="text-center small" style="margin-top: 20px;">Don't have an account? <a href="#">Sign up</a></div>
         </div>
     </body>
 </html>
