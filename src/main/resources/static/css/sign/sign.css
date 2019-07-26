@@ -1,0 +1,32 @@
+body {
+    min-height: 700px;
+}
+
+body div.signin-form {
+    margin: 0 auto;
+    width: 400px;
+    padding-top: 150px;
+}
+
+.signin-form form {
+    border: 1px solid #a1a1a8;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.signin-form form :nth-child(2) {
+    margin-top: 30px;
+}
+
+.signin-form form div.form-group a {
+    font-size: 14px;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.signin-form form div.social-btn a img {
+    width: 44px;
+    border: 1px solid #616161;
+    border-radius: 22px;
+    padding: 4px;
+}
